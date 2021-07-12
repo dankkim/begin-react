@@ -1,4 +1,5 @@
 import Hello from './Hello';
+import Wrapper from './Wrapper'
 
 function App() {
   const style = {
@@ -8,12 +9,16 @@ function App() {
 
   return (
     <div>
-      <div style={style}>
-        aasd
-      </div>
-      <Hello/>
-      <Hello/>
-      <Hello/>
+      <Wrapper>
+        <div style={style}>
+          style
+        </div>
+        <Hello
+          // 열리는 태그 내부에서는 이렇게 주석을 작성 할 수 있습니다.
+        />
+        <Hello name="react" color="red" isSpecial/>
+        <Hello color="pink"/>
+      </Wrapper>
     </div>
   );
 }
