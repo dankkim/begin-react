@@ -30,13 +30,15 @@ function Todo() {
   }
 
   const addTodo = () => {
-    setTodos([
-      ...todos,
-      text
-    ])
+    if (text !== '') {
+      setTodos([
+        ...todos,
+        text
+      ])
 
-    localStorage.setItem('todos', JSON.stringify(todos));
-    setText('');
+      localStorage.setItem('todos', JSON.stringify(todos));
+      setText('');
+    }
   }
 
   const deleteTodo = (key) => {
